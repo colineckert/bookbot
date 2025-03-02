@@ -12,12 +12,5 @@ def get_char_count(text: str) -> "dict[str, int]":
                 char_dict[lower_char] = 1
     return char_dict
 
-def sort_on_value(dict):
-    return list(dict.values())[0]
-
 def get_sorted_char_counts(char_dict: "dict[str, int]"):
-    char_count_list = []
-    for char, count in char_dict.items():
-        char_count_list.append({ char: count })
-    char_count_list.sort(key=sort_on_value, reverse=True)
-    return char_count_list
+    return sorted(char_dict.items(), key=lambda item: item[1], reverse=True)

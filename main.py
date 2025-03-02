@@ -19,9 +19,7 @@ def main():
     print("--------- Character Count -------")
     num_chars = get_char_count(text)
     sorted_chars_list = get_sorted_char_counts(num_chars)
-    for item in sorted_chars_list:
-        char = list(item.keys())[0]
-        count = item[char]
+    for char, count in sorted_chars_list:
         print(f"{char}: {count}")
 
     print("============= END ===============")
